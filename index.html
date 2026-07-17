@@ -5999,6 +5999,525 @@ kbd,
   background: #ffffff;
 }
 
+/* Catalyst dates are explicit, keyboard-accessible drill-down controls. */
+.catalyst-date-trigger {
+  display: inline-flex;
+  align-self: start;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: 32px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 4px;
+  color: var(--accent);
+  background: transparent;
+  text-decoration: underline;
+  text-decoration-color: rgba(37, 99, 166, 0.38);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.catalyst-date-trigger:hover {
+  color: #174d87;
+  text-decoration-color: currentColor;
+}
+
+.catalyst-date-trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.catalyst-date-trigger:hover ~ .event-content,
+.catalyst-date-trigger:focus-visible ~ .event-content {
+  border-color: rgba(37, 99, 166, 0.28);
+  background: #f2f7fc;
+}
+
+.catalyst-detail-card + .catalyst-detail-card {
+  margin-top: 10px;
+}
+
+/* Design polish v5: clearer hierarchy for a buy-side research workflow. */
+:root {
+  --font-label: 10px;
+  --font-meta: 12px;
+  --font-small: 13px;
+  --font-body: 14px;
+  --font-reading: 15px;
+  --font-heading: 18px;
+  --radius: 17px;
+  --radius-sm: 13px;
+  --shadow: 0 12px 32px rgba(27, 45, 38, 0.065), 0 2px 8px rgba(27, 45, 38, 0.035);
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.62;
+  background:
+    radial-gradient(circle at 78% -8%, rgba(49, 112, 176, 0.1), transparent 29%),
+    linear-gradient(180deg, #f5f7f9 0%, #eef2f5 100%);
+}
+
+body::before,
+.ambient {
+  display: none;
+}
+
+.topbar {
+  min-height: 74px;
+  padding: 11px 24px;
+  border-bottom-color: rgba(27, 55, 45, 0.09);
+  box-shadow: 0 1px 14px rgba(25, 42, 36, 0.045);
+}
+
+.workspace {
+  max-width: 1720px;
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1fr) clamp(340px, 26vw, 380px);
+  gap: 20px;
+  padding: 20px 24px 46px;
+}
+
+.report {
+  gap: 18px;
+}
+
+.report-modules,
+.custom-sections-host {
+  gap: 24px;
+}
+
+.report-module[data-report-section] {
+  gap: 16px;
+}
+
+.glass-panel,
+.card,
+.decision-card,
+.custom-section-card,
+.event-timeline-card,
+.valuation-card,
+.valuation-sensitivity-card,
+.research-card,
+.research-outline-card,
+.risk-card,
+.tracking-card {
+  border-color: rgba(30, 58, 48, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.card,
+.event-timeline-card,
+.valuation-card,
+.valuation-sensitivity-card,
+.research-card,
+.research-outline-card,
+.risk-card,
+.tracking-card,
+.custom-report-card,
+.custom-section-card {
+  padding: 21px 22px;
+}
+
+.hero {
+  padding: 28px 30px 0;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 88% 4%, rgba(37, 99, 166, 0.1), transparent 30%),
+    #ffffff;
+}
+
+.hero::after {
+  opacity: 0.55;
+}
+
+.company-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+}
+
+.company-title-row h1 {
+  font-size: clamp(27px, 2.2vw, 34px);
+  line-height: 1.15;
+}
+
+.hero-grid {
+  margin-top: 26px;
+  gap: 28px;
+}
+
+.thesis-block h2 {
+  max-width: 34ch;
+  font-size: clamp(22px, 1.8vw, 29px);
+  line-height: 1.38;
+}
+
+.core-conflict p {
+  max-width: 68ch;
+}
+
+.market-tape {
+  border-color: rgba(37, 99, 166, 0.12);
+  background: linear-gradient(155deg, #f8fafc, #f1f5f8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.kpi-ribbon {
+  margin: 26px -30px 0;
+  background: #f6f8fa;
+  border-top-color: rgba(30, 58, 48, 0.09);
+}
+
+.kpi-item {
+  min-height: 86px;
+  padding: 15px 17px;
+}
+
+.decision-strip,
+.report-grid,
+.module-grid {
+  gap: 16px;
+}
+
+.decision-card {
+  padding: 19px 20px 17px;
+}
+
+.decision-row,
+.check-row {
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.decision-row b,
+.check-row b {
+  line-height: 1.45;
+}
+
+.decision-row p,
+.check-row p,
+.card-lead {
+  line-height: 1.65;
+}
+
+.report-module-header {
+  min-height: 0;
+  padding: 10px 4px 14px 16px;
+  border: 0;
+  border-bottom: 1px solid rgba(28, 58, 47, 0.11);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.report-module-header::before {
+  inset: 8px auto 13px 0;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.report-module-header > p {
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.report-module .card-header .section-index {
+  display: none;
+}
+
+.card-header > div:first-child {
+  gap: 0;
+}
+
+.card-header {
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+.line-chart {
+  width: 100%;
+  min-height: 240px;
+  aspect-ratio: 3 / 1;
+}
+
+.line-chart svg {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+}
+
+.chart-axis-label,
+.chart-date-label,
+.chart-event-label {
+  font-size: 11px;
+}
+
+.chart-line,
+.chart-segment {
+  stroke-width: 2.7;
+}
+
+.event-timeline::before,
+.catalyst-timeline::before {
+  left: 124px;
+  background: linear-gradient(var(--accent), rgba(37, 99, 166, 0.06));
+}
+
+.event-item,
+.catalyst-event {
+  grid-template-columns: 106px 16px minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.event-content {
+  padding: 14px 16px;
+  border-radius: 12px;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.catalyst-date-trigger {
+  min-height: 36px;
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.35;
+  text-decoration-style: solid;
+}
+
+.catalyst-date-trigger:hover,
+.catalyst-date-trigger[aria-expanded="true"] {
+  color: #174d87;
+  background: var(--accent-soft);
+}
+
+.catalyst-date-trigger[aria-expanded="true"] ~ .event-content {
+  border-color: rgba(37, 99, 166, 0.32);
+  background: #eef5fb;
+  transform: translateX(2px);
+}
+
+.rail-link {
+  position: relative;
+}
+
+.rail-link.active::before {
+  position: absolute;
+  left: -15px;
+  width: 3px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+}
+
+.rail-link:focus-visible,
+.rail-help:focus-visible,
+.suggestion-list button:focus-visible,
+.message-sources button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.copilot {
+  top: 94px;
+  height: calc(100vh - 114px);
+  border-radius: 18px;
+  box-shadow: 0 18px 44px rgba(24, 43, 36, 0.09);
+}
+
+.copilot-header {
+  padding: 18px;
+}
+
+.context-strip {
+  padding: 10px 16px;
+}
+
+.chat-messages {
+  gap: 14px;
+  padding: 16px;
+}
+
+.message {
+  max-width: 100%;
+  padding: 13px 14px;
+}
+
+.message > p {
+  font-size: var(--font-body);
+  line-height: 1.68;
+}
+
+.answer-section {
+  margin-top: 10px;
+  padding: 10px 11px;
+  border: 1px solid rgba(29, 58, 47, 0.08);
+  border-radius: 10px;
+  background: #f8fafb;
+}
+
+.answer-section.counter {
+  border-color: rgba(168, 109, 22, 0.12);
+  background: #fffaf0;
+}
+
+.suggestions-wrap {
+  padding: 12px 14px 10px;
+}
+
+.suggestion-list {
+  gap: 7px;
+}
+
+.suggestion-list button {
+  padding: 7px 9px;
+  line-height: 1.4;
+  text-align: left;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.chat-composer {
+  margin: 0 12px 12px;
+  border-radius: 13px;
+}
+
+.chat-composer textarea {
+  padding: 12px 13px 4px;
+}
+
+.evidence-drawer {
+  width: min(560px, 94vw);
+}
+
+.source-card {
+  padding: 16px;
+  border-radius: 12px;
+}
+
+@media (max-width: 1240px) {
+  .workspace {
+    max-width: 1120px;
+    grid-template-columns: 1fr;
+  }
+
+  .copilot {
+    position: relative;
+    top: 0;
+    height: 660px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --font-meta: 11px;
+    --font-small: 12px;
+    --font-body: 14px;
+    --font-reading: 15px;
+    --font-heading: 17px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .topbar {
+    padding: 10px;
+  }
+
+  .workspace {
+    gap: 12px;
+    padding: 12px 10px 24px;
+  }
+
+  .report-modules,
+  .custom-sections-host {
+    gap: 18px;
+  }
+
+  .hero {
+    padding: 20px 17px 0;
+  }
+
+  .kpi-ribbon {
+    margin: 20px -17px 0;
+  }
+
+  .card,
+  .event-timeline-card,
+  .valuation-card,
+  .valuation-sensitivity-card,
+  .research-card,
+  .research-outline-card,
+  .risk-card,
+  .tracking-card,
+  .custom-report-card,
+  .custom-section-card {
+    padding: 17px;
+  }
+
+  .report-module-header {
+    padding: 10px 2px 12px 13px;
+  }
+
+  .report-module-header > p {
+    padding-left: 0;
+  }
+
+  .line-chart,
+  .line-chart svg {
+    height: 220px;
+    min-height: 220px;
+    aspect-ratio: auto;
+  }
+
+  .event-timeline::before,
+  .catalyst-timeline::before {
+    left: 93px;
+  }
+
+  .event-item,
+  .catalyst-event {
+    grid-template-columns: 78px 14px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .catalyst-date-trigger {
+    padding: 4px 5px;
+    font-size: 11px;
+  }
+
+  .rail-link.active::before {
+    inset: auto auto -10px 50%;
+    width: 20px;
+    height: 3px;
+    transform: translateX(-50%);
+  }
+
+  .copilot {
+    height: 680px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -6362,7 +6881,7 @@ kbd,
   </div>
 
   <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
-  <aside class="evidence-drawer" id="evidenceDrawer" aria-hidden="true">
+  <aside class="evidence-drawer" id="evidenceDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
     <header>
       <div><small id="drawerEyebrow">EVIDENCE</small><h2 id="drawerTitle">证据详情</h2></div>
       <button type="button" id="closeDrawer" aria-label="关闭">×</button>
@@ -7767,7 +8286,7 @@ kbd,
     }).join("");
 
     byId("priceChart").innerHTML = `
-      <svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true">
+      <svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <defs>
           <linearGradient id="priceArea" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#7b8794" stop-opacity="0.12"></stop>
@@ -7884,15 +8403,7 @@ kbd,
   function renderCatalysts() {
     const host = byId("eventTimeline");
     if (!host) return;
-    let events = firstArray(state.data.catalysts, ["events", "timeline", "items"]);
-    if (!events.length) {
-      events = asArray(state.data.investmentView?.nextChecks).map((item) => ({
-        date: item.date,
-        title: item.item,
-        detail: item.detail || "等待下一数据节点验证",
-        status: item.status
-      }));
-    }
+    const events = catalystEvents();
     host.innerHTML = events.length ? events.map((event, index) => {
       const date = event.date || event.time || event.period || "待确认";
       const title = event.title || event.event || event.item || `催化事件 ${index + 1}`;
@@ -7904,10 +8415,22 @@ kbd,
       const eventTrend = negative ? "negative market-down" : positive ? "positive market-up" : "neutral";
       return `
         <article class="event-item ${eventTrend}">
-          <time class="event-date">${escapeHtml(date)}</time><span class="event-marker"></span>
+          <button class="event-date catalyst-date-trigger" type="button" data-catalyst-index="${index}" aria-expanded="false" aria-controls="evidenceDrawer" aria-label="查看 ${escapeHtml(date)} ${escapeHtml(title)} 的事件详情">${escapeHtml(date)}</button><span class="event-marker"></span>
           <div class="event-content"><h4>${escapeHtml(title)}</h4><p>${escapeHtml(detail)}</p><span class="event-tag ${eventTrend}">${escapeHtml(tag)}</span></div>
         </article>`;
     }).join("") : emptyState("暂无催化事件数据，待接入后自动更新。");
+  }
+
+  function catalystEvents() {
+    const configured = firstArray(state.data.catalysts, ["events", "timeline", "items"]);
+    if (configured.length) return configured;
+    return asArray(state.data.investmentView?.nextChecks).map((item) => ({
+      date: item.date,
+      title: item.item,
+      detail: item.detail || "等待下一数据节点验证",
+      status: item.status,
+      sourceIds: item.sourceIds
+    }));
   }
 
   function renderForecastValuation() {
@@ -8097,6 +8620,12 @@ kbd,
     byId("meetingTimeline")?.addEventListener("click", (event) => {
       const button = event.target.closest("button[data-meeting]");
       if (button) openMeeting(button.dataset.meeting);
+    });
+
+    byId("eventTimeline")?.addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-catalyst-index]");
+      if (!button) return;
+      openCatalyst(Number(button.dataset.catalystIndex));
     });
 
     document.addEventListener("click", (event) => {
@@ -8483,6 +9012,50 @@ kbd,
     openDrawer();
   }
 
+  function openCatalyst(index) {
+    const events = catalystEvents();
+    const catalyst = events[index];
+    if (!catalyst) return;
+
+    const date = catalyst.date || catalyst.time || catalyst.period || "待确认";
+    const title = catalyst.title || catalyst.event || catalyst.item || `催化事件 ${index + 1}`;
+    const detail = catalyst.detail || catalyst.description || catalyst.delta || "尚无补充说明";
+    const level = catalyst.level || catalyst.type || catalyst.category || "待验证";
+    const status = catalyst.status || catalyst.stage || "正在跟踪";
+    const impact = catalyst.impact || catalyst.marketImpact || catalyst.effect || catalystImpactText(catalyst);
+    const sources = asArray(catalyst.sourceIds).map((id) => state.sourceMap.get(id)).filter(Boolean);
+
+    $$(".catalyst-date-trigger", byId("eventTimeline")).forEach((button, buttonIndex) => {
+      button.setAttribute("aria-expanded", String(buttonIndex === index));
+    });
+
+    setText("drawerEyebrow", `CATALYST DETAIL · ${date}`);
+    setText("drawerTitle", title);
+    byId("drawerBody").innerHTML = `
+      <div class="drawer-note">事件状态：<b>${escapeHtml(status)}</b> · 信息属性：${escapeHtml(level)}</div>
+      <article class="source-card catalyst-detail-card">
+        <header><div><span>完整说明</span><span>${escapeHtml(level)}</span></div><time>${escapeHtml(date)}</time></header>
+        <p>${escapeHtml(detail)}</p>
+      </article>
+      <article class="source-card catalyst-detail-card">
+        <header><div><span>影响判断</span><span>${catalyst.impact || catalyst.marketImpact || catalyst.effect ? "事件信息" : "模型归因"}</span></div></header>
+        <p>${escapeHtml(impact)}</p>
+      </article>
+      ${sources.length ? `<div class="drawer-note"><b>证据来源</b> · ${sources.length} 条</div>${sources.map(sourceCard).join("")}` : `<div class="drawer-note">当前事件暂无可展开的证据来源。</div>`}`;
+    openDrawer();
+  }
+
+  function catalystImpactText(catalyst) {
+    const context = `${catalyst.tone || ""} ${catalyst.status || ""} ${catalyst.title || ""}`;
+    if (/风险|下跌|回落|延迟|negative|bear/i.test(context)) {
+      return "偏负面：该节点强化风险定价，需继续观察后续价格、流动性与基本面反馈。";
+    }
+    if (/利好|上涨|超预期|兑现|positive|bull/i.test(context)) {
+      return "偏正面：该节点构成阶段性催化，持续性仍需由后续经营与盘面数据验证。";
+    }
+    return "中性验证节点：主要用于检验相关投资逻辑是否按预期兑现。";
+  }
+
   function sourceCard(source) {
     const location = source.url
       ? `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">打开原始来源 ↗</a>`
@@ -8535,6 +9108,7 @@ kbd,
   function closeDrawer() {
     byId("evidenceDrawer").classList.remove("open");
     byId("evidenceDrawer").setAttribute("aria-hidden", "true");
+    $$(".catalyst-date-trigger", byId("eventTimeline")).forEach((button) => button.setAttribute("aria-expanded", "false"));
     window.setTimeout(() => { byId("drawerBackdrop").hidden = true; }, 210);
   }
 
